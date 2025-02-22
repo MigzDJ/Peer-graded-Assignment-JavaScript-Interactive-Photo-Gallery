@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Responsive Image Hover Effect</h1>
+    <div id="image">Hover over an image below to display here.</div>
+    <div class="image-container">
+        <img src="image1.jpg" alt="Image 1" class="previewPic" onmouseover="upDate(this)" onmouseout="undo()">
+        <img src="image2.jpg" alt="Image 2" class="previewPic" onmouseover="upDate(this)" onmouseout="undo()">
+        <img src="image3.jpg" alt="Image 3" class="previewPic" onmouseover="upDate(this)" onmouseout="undo()">
+    </div>
+    <script>
+        function upDate(previewPic) {
+            document.getElementById('image').style.backgroundImage = "url('" + previewPic.src + "')";
+            document.getElementById('image').innerHTML = previewPic.alt;
+        }
+        
+        function undo() {
+            document.getElementById('image').style.backgroundImage = "url('')";
+            document.getElementById('image').innerHTML = "Hover over an image below to display here.";
+        }
+    </script>
+</body>
+</html>
